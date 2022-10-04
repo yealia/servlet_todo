@@ -15,6 +15,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="org/zerock/todoteam/dao/TodoMapper.xml"></mapper>
+        <mapper resource="com/example/todo/dao/TimeMapper.xml"/>
+        <mapper resource="com/example/todo/dao/TodoMapper.xml"/>
     </mappers>
 </configuration>
