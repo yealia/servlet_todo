@@ -27,6 +27,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
+                    <th scope="col">MEMO</th>
                     <th scope="col">Due Date</th>
                     <th scope="col">Complete</th>
                 </tr>
@@ -37,7 +38,7 @@
                             <li class="page-item"><a class="page-link" href="/todo/list?page=${pageDTO.start -1}">Previous</a></li>
                         </c:if>
                         <c:forEach begin="${pageDTO.start}" end="${pageDTO.end}" var="num">
-                            <li class="page-item"><a class="page-link" href="/todo/list?page=${num}"> ${num} </a></li>
+                            <li class="page-item"><a class="page-link" href="/todo/list?page=${num}${pageDTO.link}"> ${num} </a></li>
                         </c:forEach>
                             <c:if test="${pageDTO.next}">
                                 <li class="page-item"><a class="page-link" href="/todo/list?page=${pageDTO.end  + 1}">Next</a></li>
@@ -50,6 +51,7 @@
                     <tr>
                         <th scope="row">${dtoList.tno} </th>
                         <td><a href="/todo/read?tno=${dtoList.tno}" style="text-decoration: none; color: black;"><c:out value="${dtoList.title}"/></a></td>
+                        <td>${dtoList.memo} </td>
                         <td>${dtoList.dueDate} </td>
                         <td>${dtoList.complete ? "YES" : "NOT YET"} </td>
                     </tr>
